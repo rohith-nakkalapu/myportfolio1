@@ -1,1 +1,750 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .main1 {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: black;
+        }
+
+        .box {
+            width: 100vw;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #c3cfe2;
+            box-shadow: 0px 0px 10px;
+        }
+
+        nav {
+            margin: 0;
+            width: 100vw;
+            height: 8vh;
+            font-size: 20px;
+            display: flex;
+            position: fixed;
+            align-items: center;
+            border: 2px solid aqua;
+            z-index: 10;
+            gap: 30px;
+            justify-content: space-evenly;
+            background-color: black;
+        }
+
+        a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .a1:hover,
+        .a2:hover,
+        .a3:hover,
+        .a4:hover {
+            font-size: 20px;
+            transition: 0.5s;
+            text-decoration: underline;
+            color: aqua;
+        }
+
+        .box2 {
+            width: 50vw;
+            height: 60vh;
+            margin-top: 100px;
+            flex-wrap: wrap;
+            text-align: center;
+            padding: 30px;
+            font-size: large;
+            border-radius: 10px;
+            z-index: 8;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            opacity: 0;
+            animation: fadeIn 4s forwards;
+        }
+
+        @media (max-width:768px) {
+            .box2 {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        body:hover .box2 {
+            transition: 1s ease-in-out;
+            transform: translateY(-4px);
+            transition-delay: 0.1s;
+        }
+
+        body:hover .box3 {
+            left: 60vw;
+            transition: 1s ease-in-out;
+        }
+
+        .box2 p {
+            color: white;
+        }
+
+        .box2 button {
+            margin: 10px;
+            height: 30px;
+            cursor: pointer;
+            border: 1px solid white;
+            font-size: 20px;
+            background: transparent;
+            color: rgb(0, 255, 238);
+        }
+
+        .box2 button:hover {
+            border: none;
+            border-radius: 1px;
+            transition: 0.5s;
+            background-color: rgb(0, 0, 0);
+            color: rgb(0, 113, 170);
+            transform: translateY(-5px);
+        }
+
+        .box2 h1 {
+            color: rgb(11, 138, 85);
+            font-size: 40px;
+        }
+
+        .box2 h2 {
+            font-size: 30px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .main2 {
+            margin-top: 100px;
+            margin-bottom: 20px;
+            width: 100vw;
+            height: auto;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .about {
+            margin-top: 10px;
+            margin-bottom: 100px;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .about p {
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        .aboutbox {
+            margin: 10px;
+            width: 40vw;
+            height: auto;
+            border: none;
+            font-size: 15px;
+            animation: reveal linear both;
+            animation-timeline: view();
+            animation-range: entry 20% cover 50%;
+        }
+
+        .about-text {
+            display: flex;
+            margin: 20px;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .about-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 20px;
+        }
+
+        .main2 img {
+            width: 25vw;
+            height: 50vh;
+            max-width: 100%;
+            z-index: 8;
+            border-radius: 50%;
+            animation: reveal linear both;
+            animation-timeline: view();
+            animation-range: entry 10% cover 50%;
+        }
+
+        .main2heading {
+            font-size: 30px;
+            text-shadow: 0px 0px 25px rgb(0, 225, 255);
+        }
+
+        span {
+            color: rgb(0, 94, 255);
+        }
+
+        .social-icons a {
+            font-size: 40px;
+            text-decoration: none;
+            margin: 15px;
+            background-color: #000000;
+        }
+
+        .social-icons .linkedin:hover {
+            color: rgb(0, 123, 255);
+            background-color: black;
+            transition: 0.5s;
+            text-shadow: 0px 0px 20px aqua;
+        }
+
+        .social-icons .whatsapp:hover {
+            color: rgba(18, 253, 97, 0.763);
+            background-color: black;
+            transition: 0.5s;
+            text-shadow: 0px 0px 25px aqua;
+        }
+
+        .social-icons .gmail:hover {
+            color: rgb(255, 0, 0);
+            background-color: black;
+            transition: 0.5s;
+            text-shadow: 0px 0px 25px aqua;
+        }
+
+        .social-icons .insta:hover {
+            color: rgb(255, 0, 204);
+            background-color: black;
+            transition: 0.5s;
+            text-shadow: 0px 0px 25px aqua;
+        }
+
+        .skills {
+            margin: 5px;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-direction: row;
+        }
+
+        .skill-card {
+            width: 40%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #1e293b;
+            margin-bottom: 5px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #334155;
+        }
+
+        .skill-card span,
+        h4 {
+            margin: 5px;
+        }
+
+        .skills h1 {
+            color: #38bdf8;
+        }
+
+        @media (max-width:768px) {
+            .about {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-img {
+                order: 1;
+                width: 90vw;
+                text-align: center;
+            }
+
+            .about-text {
+                order: 2;
+                width: 90vw;
+                text-align: center;
+            }
+
+            .about-img img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .skills {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .basic {
+            color: #facc15;
+        }
+
+        .intermediate {
+            color: #38bdf8;
+        }
+
+        .advanced {
+            color: #22c55e;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .main3 {
+            margin-top: 50px;
+            width: 100vw;
+            height: auto;
+            min-height: 50vw;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .main3heading {
+            height: auto;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            border: none;
+            text-shadow: 0px 0px 25px aqua;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .project-box {
+            width: 300px;
+            height: 400px;
+            background-color: #ffff;
+            border-radius: 12px;
+            padding: 10px;
+            text-align: start;
+            flex-shrink: 0;
+            color: black;
+            animation: reveal linear both;
+            animation-timeline: view();
+            animation-range: entry 0% cover 50%;
+        }
+
+        .project-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .project-box a,
+        p {
+            font-size: larger;
+            color: rgb(0, 0, 0);
+        }
+
+        .project-box a:hover {
+            text-decoration: underline;
+            color: blue;
+            transition: 0.3s;
+        }
+
+        .project-box button {
+            width: auto;
+            height: 25px;
+            border-radius: 20px;
+            background-color: #2c2c2c;
+            color: rgb(255, 255, 255);
+            border: none;
+        }
+
+        .main4 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            position: relative;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        input,
+        textarea {
+            width: 90%;
+            height: 30px;
+            background-color: rgb(34, 34, 67);
+            border: 1px solid #334155;
+            border-radius: 10px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical
+        }
+
+        .contactbox {
+            width: 40%;
+            height: 55vh;
+            color: white;
+            text-align: center;
+            flex-shrink: 0;
+            margin: 40px auto;
+            margin-bottom: 50px;
+            border: none;
+            animation: reveal linear both;
+            animation-timeline: view();
+            animation-range: entry 0 cover 45%;
+        }
+
+        .contactbox button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: rgb(73, 155, 255);
+            color: #0f172a;
+        }
+
+        .contactbox h1{
+            color:  #e2e8f0;
+        }
+
+        .contactbox button:hover {
+            border-radius: 5px;
+            transition: 0.5s;
+            background: linear-gradient(to left, rgb(0, 225, 255), aqua);
+            color: rgb(0, 0, 0);
+            transform: scale(0.94);
+        }
+
+        .contactheading {
+            width: 100%;
+            margin-top: 25px;
+            margin-bottom: 30px;
+            height: auto;
+            color: white;
+            display: flex;
+            font-size: 25px;
+            justify-content: center;
+            text-shadow: 0px 0px 15px aqua;
+            align-items: center;
+        }
+
+        .contact-txt{
+            margin-top: 80px;
+            margin-bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-size: 30px;
+            color: white;
+        }
+
+        .contact-txt p{
+            color: white;
+            font-size: 25px;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .contact-txt a{
+            font-size: 50px;
+            color: #f1f5f9;;
+            text-shadow: 0px 0px 0px white;
+        }
+
+        .contact-txt a:hover{
+            font-size: 50px;
+            transition: 0.5s;
+            color: #ffffff;
+            border:none;
+            text-shadow: 0px 0px 25px rgb(0, 234, 255);
+            transform: translateY(-4px);
+        }
+
+        @media (max-width: 768px) {
+            .contactbox {
+                width: 90%;
+            }
+        }
+
+        .main5 {
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#home" class="a1">
+            <h4>Home</h4>
+        </a>
+        <a href="#about" class="a2">
+            <h4>About</h4>
+        </a>
+        <a href="#projects" class="a3">
+            <h4>Projects</h4>
+        </a>
+        <a href="#contact" class="a4">
+            <h4>Contact</h4>
+        </a>
+    </nav>
+    <section class="main1" id="home">
+        <article class="box2">
+            <h2>Hello I'Am</h1>
+                <i>
+                    <h1 class="name">Rohith Kumar</h1><br>
+                </i>
+                <h2>A Software Engineer & Full Stack Developer</h2><br>
+                <p>B-Tech Graduate,Focusing On Skill Development</p><br><br>
+                <a href="#projects"><button>View Projects</button></a>
+                <a href="#contact"><button>Contact Me</button></a>
+        </article>
+    </section>
+
+    <section class="main2" id="about">
+        <article class="main2heading">
+            <h1>ABOUT ME</h1>
+        </article>
+        <div class="about">
+            <article class="aboutbox about-img">
+                <img src="mypicture.jpg" alt="image">
+                <h1 style="font-size: 50px;"><span>R</span>ohith <span>K</span>umar</h1>
+            </article>
+            <article class="aboutbox about-text">
+                <h1 style="color: #38bdf8;">ABOUT ME/WHO I AM</h1><br>
+                <p style="color: white;">I am a dedicated frontend developer with a strong interest in building clean,
+                    responsive, and user-friendly websites. I enjoy working with HTML and CSS to transform simple ideas
+                    into visually appealing web interfaces.I focus on writing structured, readable code and designing
+                    layouts that adapt smoothly across different screen sizes. Rather than relying only on libraries, I
+                    work on strengthening my core fundamentals to build reliable and maintainable web pages.</p><br>
+                <div class="skills">
+                    <h1>My Skills</h1><br>
+                    <div class="skills">
+                        <div class="skill-card">
+                            <h4>HTML</h4>
+                            <span class="advanced">Advanced</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>CSS</h4>
+                            <span class="advanced">Advanced</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>JavaScript</h4>
+                            <span class="basic">Basic</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>GitHub</h4>
+                            <span class="intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Python</h4>
+                            <span class="basic">Basic</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>SQL</h4>
+                            <span class="intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Data Structures</h4>
+                            <span class="basic">Basic</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Java</h4>
+                            <span class="basic">Basic</span>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/rohith-kumar-nakkalapu-29504b357?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank" class="linkedin">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://wa.me/919391797948" target="_blank" class="whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:rohithnekkalapu2007@gmail.com" class="gmail">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rohithkumar_nekkalapu" target="_blank" class="insta">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+            </article>
+        </div>
+    </section>
+    <section class="main3" id="projects">
+        <article class="main3heading">
+            <h1>🚀Projects</h1>
+        </article>
+        <article class="projects">
+            <div class="project-box">
+                <img src="image1.png" alt="Recycling App">
+                <div className="projectbtn">
+                    <p>A user-friendly web application that helps individuals understand proper waste segregation and
+                        promotes eco-friendly recycling practices through clear guidelines and tips.</p><br>
+                    <button className="logo">HTML</button>
+                    <button className="logo">CSS</button>
+                    <button className="logo">JAVASCRIPT</button>
+                </div><br>
+                <a href="https://rohith-nakkalapu.github.io/Recycling-guide-app/">
+                    <i class="fa-brands fa-github" github-icon></i> GitHub
+                </a>
+            </div>
+            <div class="project-box">
+                <img src="image2.png" alt="Login Website">
+                <div className="projectbtn">
+                    <p>A secure authentication-based website that implements user registration and login functionality
+                        with form validation and responsive design.</p><br>
+                    <button className="logo">HTML</button>
+                    <button className="logo">CSS</button>
+                    <button className="logo">API</button>
+                </div><br>
+                <a href="https://rohith-nakkalapu.github.io/login-page/">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="project-box">
+                <img src="image3.png" alt="Personal Portfolio">
+                <div className="projectbtn">
+                    <p>A personal portfolio website showcasing my skills, projects, and achievements with a clean,
+                        modern, and responsive user interface.</p><br>
+                    <button className="logo">JAVASCRIPT</button>
+                    <button className="logo">CSS</button>
+                    <button className="logo">HTML</button>
+                </div><br>
+                <a href="https://rohith-nakkalapu.github.io/myportfolio/">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="project-box">
+                <img src="image4.png" alt="Disaster Response">
+                <div className="projectbtn">
+                    <p>An informative and alert-based application designed to provide real-time disaster awareness,
+                        safety guidelines, and emergency response information to users.</p><br>
+                    <button className="logo">HTML</button>
+                    <button className="logo">CSS</button>
+                    <button className="logo">JS</button>
+                </div><br>
+                <a href="https://rohith-nakkalapu.github.io/ProjectPR/">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
+        </article>
+    </section>
+
+    <section class="main4" id="contact">
+        <article class="contactheading">
+            <h1>📞CONTACT</h1>
+        </article>
+        <article class="contactbox">
+            <div class="contact-txt">
+                <p>I’m always open to discussing new opportunities, collaborating on projects, or answering any questions you may have.</p>
+            </div>
+            <div class="contact-txt">
+                <a href="https://www.linkedin.com/in/rohith-kumar-nakkalapu-29504b357?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank" class="linkedin">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/919391797948" target="_blank" class="whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="mailto:rohithnekkalapu2007@gmail.com" class="gmail">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://www.instagram.com/rohithkumar_nekkalapu" target="_blank" class="insta">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </article>
+        <article class="contactbox">
+            <h1><b>Contact Me</b></h1><br>
+            <p style="font-size:20px; color: white;">Available at any time.You can contact Via Email OR Whatsapp.</p>
+            <br><br>
+            <form>
+                <input type="text" name="Name" placeholder="Your Name" required><br><br>
+                <input type="email" placeholder="Email@example.com" required><br><br>
+                <textarea type="text" placeholder="Your Message" required></textarea><br><br>
+                <button class="btn" mailto:"rohithnekkalapu2007@gmail.com">Submit Message</button>
+            </form><br>
+        </article>
+    </section>
+    <hr style="border-color: rgb(123, 123, 123);">
+
+    <section class="main5">
+        <footer>
+            <p style="text-align: center;color: white;">© 2025 <span>R</span>ohith <span>K</span>umar Nakkalapu — Built
+                with &#x1F525 • Made responsive &
+                accessible</p>
+        </footer>
+    </section>
+</body>
+
+</html>
