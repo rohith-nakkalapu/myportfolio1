@@ -559,6 +559,22 @@
             transform: translateY(-4px);
         }
 
+        form input,textarea {
+            border: 1px solid #ccc;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        form input:focus {
+            border-color: #00c8ff;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+        }
+
+        form textarea:focus {
+            border-color: #00c8ff;
+            box-shadow: 0 0 20px rgba(0, 247, 255, 0.6);
+        }
+
         @media (max-width: 768px) {
             .contactbox {
                 width: 90%;
